@@ -1,0 +1,176 @@
+﻿<Window x:Class="Ruby.PL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ruby.PL"
+        mc:Ignorable="d"
+        Title="Ruby" Height="450" Width="800">
+    <Grid ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Menu Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="22"
+           Background="LightGray">
+            <MenuItem Header="File" FontSize="15">
+                <MenuItem Header="New project">
+                </MenuItem>
+                <MenuItem Header="Open project"></MenuItem>
+                <Separator/>
+                <MenuItem Header="Last file"></MenuItem>
+                <MenuItem Header="Last project and solution"></MenuItem>
+                <Separator/>
+                <MenuItem Header="Exit"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Edit" FontSize="15">
+                <MenuItem Header="Go"></MenuItem>
+                <MenuItem Header="Find and replace"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="View" FontSize="15">
+                <MenuItem Header="Topics" Click="TopicClick"></MenuItem>
+                <Separator/>
+                <MenuItem Header="Archive"></MenuItem>
+                <Separator/>
+                <MenuItem Header="Other window"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Extension" FontSize="15">
+                <MenuItem Header="Tune menu"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Window" FontSize="15">
+                <MenuItem Header="Divide"></MenuItem>
+                <Separator/>
+                <MenuItem Header="Split window vertically"></MenuItem>
+                <MenuItem Header="Split window horizontally"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Reference" FontSize="15">
+                <MenuItem Header="Documentation"></MenuItem>
+                <MenuItem Header="About the program">
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="Culture"/>
+                <Separator/>
+                <MenuItem Header="Post a review"></MenuItem>
+                <Separator/>
+                <MenuItem Header="Update"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <ToolBar Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="22"
+                 Background="WhiteSmoke">
+            <Button Content="Copy" Width="55" Style="{StaticResource TopLevel}"
+                    ToolTip="Copy text to clipboard"/>
+            <Button Content="Paste" Width="60" Style="{StaticResource TopLevel}"
+                    ToolTip="Paste text from clipboard"/>
+            <Separator Height="27" Width="2"/>
+            <Button Content="Addition" Width="75" Style="{StaticResource TopLevel}"
+                    ToolTip="Addition new user to table" Click="AdditionClick"/>
+            <Button Content="Edit" Width="55" Style="{StaticResource TopLevel}"
+                    ToolTip="Edit user in table" Click="EditClick"/>
+            <Button Content="Delete" Width="55" Style="{StaticResource TopLevel}"
+                    ToolTip="Delete user in table" Click="DeleteClick"/>
+            <Separator Height="27" Width="2"/>
+            <Button Content="Property" Width="75" Style="{StaticResource TopLevel}"
+                    ToolTip="Properties about the selected element"/>
+        </ToolBar>
+        <TabControl Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="22"
+                    Grid.RowSpan="20" Background="LightGray">
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="List" FontSize="14" Height="23" Width="30"
+                               Margin="5 5 0 0"/>
+                </TabItem.Header>
+                <Expander IsExpanded="True">
+                    <Expander.Header>
+                        <TextBlock Text="Control employee" FontSize="17" Margin="3"/>
+                    </Expander.Header>
+                    <ListBox x:Name="ListUsers" ItemsSource="{Binding}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Number}"
+                                               FontSize="18"/>
+                                    <TextBlock Text="{Binding Name}"
+                                               FontSize="18"/>
+                                    <TextBlock Text="{Binding Age}"
+                                               FontSize="18"/>
+                                    <TextBlock Text="{Binding Phone}"
+                                               FontSize="18"/>
+                                    <TextBlock Text="{Binding Skill}" 
+                                               FontSize="18"/>
+                                    <TextBlock Text="{Binding DateTime}"
+                                               FontSize="18"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Expander>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="Tasks" FontSize="14" Height="23" Width="40"
+                               Margin="5 5 0 0"/>
+                </TabItem.Header>
+                <Expander IsExpanded="True">
+                    <Expander.Header>
+                        <TextBlock Text="Diagram tasks" FontSize="17"/>
+                    </Expander.Header>
+                </Expander>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="Calendar" FontSize="14" Height="23" Width="60"
+                               Margin="5 5 0 0"/>
+                </TabItem.Header>
+                <Expander IsExpanded="True">
+                    <Expander.Header>
+                        <TextBlock Text="Calendar for tasks" FontSize="17"/>
+                    </Expander.Header>
+                </Expander>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
