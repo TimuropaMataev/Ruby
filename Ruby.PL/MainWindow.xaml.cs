@@ -14,7 +14,6 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
         Loaded += MainWindow_Loaded;
-        List<string> styles = new() { "Light", "Dark", "Green", "Orange" };
     }
 
     private void MainWindow_Loaded(object sender, RoutedEventArgs e)
